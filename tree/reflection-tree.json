@@ -1,0 +1,219 @@
+{
+  "start": "Q1",
+
+  "nodes": {
+
+    "Q1": {
+      "type": "question",
+      "axis": "Awareness",
+      "text": "How are you feeling right now?",
+      "options": {
+        "focused": "Q2",
+        "tired": "Q3",
+        "stressed": "Q4",
+        "bored": "Q3"
+      }
+    },
+
+    "Q2": {
+      "type": "question",
+      "axis": "Awareness",
+      "text": "What is your current goal?",
+      "options": {
+        "study": "D1",
+        "rest": "R1",
+        "entertainment": "D2"
+      }
+    },
+
+    "Q3": {
+      "type": "question",
+      "axis": "Awareness",
+      "text": "What caused this state?",
+      "options": {
+        "lack_of_sleep": "R2",
+        "overwork": "R2",
+        "distraction": "D2"
+      }
+    },
+
+    "Q4": {
+      "type": "question",
+      "axis": "Awareness",
+      "text": "What is the source of stress?",
+      "options": {
+        "deadline": "D1",
+        "uncertainty": "D3",
+        "external_pressure": "R3"
+      }
+    },
+
+    "D1": {
+      "type": "decision",
+      "text": "Do you have a clear plan?",
+      "branches": {
+        "yes": "Q5",
+        "no": "R4"
+      }
+    },
+
+    "Q5": {
+      "type": "question",
+      "axis": "Action",
+      "text": "Will you start immediately?",
+      "options": {
+        "yes": "A1",
+        "delay": "D4",
+        "avoid": "R5"
+      }
+    },
+
+    "D2": {
+      "type": "decision",
+      "text": "Is this intentional break?",
+      "branches": {
+        "yes": "Q6",
+        "no": "R5"
+      }
+    },
+
+    "Q6": {
+      "type": "question",
+      "axis": "Action",
+      "text": "Set time limit for break?",
+      "options": {
+        "yes": "A2",
+        "no": "R6",
+        "unsure": "R6"
+      }
+    },
+
+    "D3": {
+      "type": "decision",
+      "text": "Can you reduce uncertainty?",
+      "branches": {
+        "yes": "Q7",
+        "no": "R7"
+      }
+    },
+
+    "Q7": {
+      "type": "question",
+      "axis": "Action",
+      "text": "What step can you take?",
+      "options": {
+        "research": "A3",
+        "ask_help": "A3",
+        "break_task": "A1"
+      }
+    },
+
+    "D4": {
+      "type": "decision",
+      "text": "Why delay?",
+      "branches": {
+        "fear": "R8",
+        "laziness": "R5",
+        "confusion": "R7"
+      }
+    },
+
+    "A1": {
+      "type": "action",
+      "text": "Start focused work",
+      "next": "B1"
+    },
+
+    "A2": {
+      "type": "action",
+      "text": "Take controlled break",
+      "next": "B1"
+    },
+
+    "A3": {
+      "type": "action",
+      "text": "Clarify next step",
+      "next": "B1"
+    },
+
+    "B1": {
+      "type": "bridge",
+      "text": "Transition to reflection phase",
+      "next": "Q8"
+    },
+
+    "Q8": {
+      "type": "question",
+      "axis": "Reflection",
+      "text": "How did it go?",
+      "options": {
+        "productive": "R9",
+        "average": "R10",
+        "unproductive": "R11"
+      }
+    },
+
+    "R1": {
+      "type": "reflection",
+      "text": "Rest is useful when intentional"
+    },
+
+    "R2": {
+      "type": "reflection",
+      "text": "Energy management is key"
+    },
+
+    "R3": {
+      "type": "reflection",
+      "text": "External pressure affects decisions"
+    },
+
+    "R4": {
+      "type": "reflection",
+      "text": "Lack of clarity leads to delay"
+    },
+
+    "R5": {
+      "type": "reflection",
+      "text": "Avoidance creates guilt loop"
+    },
+
+    "R6": {
+      "type": "reflection",
+      "text": "Unbounded breaks reduce control"
+    },
+
+    "R7": {
+      "type": "reflection",
+      "text": "Uncertainty causes inaction"
+    },
+
+    "R8": {
+      "type": "reflection",
+      "text": "Fear blocks starting"
+    },
+
+    "R9": {
+      "type": "reflection",
+      "text": "Good structure improves outcome",
+      "next": "S1"
+    },
+
+    "R10": {
+      "type": "reflection",
+      "text": "Partial focus gives mixed results",
+      "next": "S1"
+    },
+
+    "R11": {
+      "type": "reflection",
+      "text": "Distractions reduce effectiveness",
+      "next": "S1"
+    },
+
+    "S1": {
+      "type": "summary",
+      "text": "Outcome depends on clarity, intention, and control of distractions"
+    }
+  }
+}
